@@ -1,0 +1,49 @@
+# Large binary files
+*.pdf
+*.docx
+*.zip
+*.lg
+*.pyc
+
+# Large text extracts
+naravane_*.txt
+
+# LinguaGacha runtime
+LinguaGacha/
+
+# Translation intermediate outputs
+lg_input/
+naravane_project_译文/
+naravane_project_译文_双语对照/
+translation_projects/
+translations/
+
+# Generated outputs
+output/
+
+# Office layout (unrelated)
+office_layouts/
+office_layout_*.py
+
+# Session logs
+*.jsonl
+2026-*.txt
+
+# Misc
+nul
+__pycache__/
+.codex/
+.gemini/
+
+# nanyanews system (separate project)
+nanyanews-main/
+
+# Test suite files
+skills-compatibility-test-suite/
+SKILLS_COMPATIBILITY_TEST_SUITE.md
+file_generation_test_report.md
+article_skills*.md
+polished_article.md
+
+# Temp scripts
+fetch_*.ps1

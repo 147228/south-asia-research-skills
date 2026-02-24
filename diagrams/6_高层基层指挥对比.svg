@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 780" font-family="Microsoft YaHei, SimHei, sans-serif">
+  <defs>
+    <linearGradient id="senior-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="100%" stop-color="#283593"/>
+    </linearGradient>
+    <linearGradient id="junior-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b71c1c"/>
+      <stop offset="100%" stop-color="#c62828"/>
+    </linearGradient>
+    <filter id="ds">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="780" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="550" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#333">高层与基层指挥官应对模式对比</text>
+  <text x="550" y="58" text-anchor="middle" font-size="13" fill="#888">「上层的克制」与「下层的主动」——印度陆军的两套平行指挥哲学</text>
+
+  <!-- ===== LEFT: Senior Commanders ===== -->
+  <rect x="30" y="75" width="510" height="320" rx="10" fill="white" stroke="#1a237e" stroke-width="2" filter="url(#ds)"/>
+  <rect x="30" y="75" width="510" height="38" rx="10" fill="url(#senior-bg)"/>
+  <rect x="30" y="103" width="510" height="10" fill="url(#senior-bg)"/>
+  <text x="285" y="100" text-anchor="middle" font-size="15" fill="white" font-weight="bold">高级指挥官（旅级及以上）</text>
+
+  <!-- Seven dimensions -->
+  <rect x="50" y="120" width="230" height="38" rx="5" fill="#e8eaf6"/>
+  <text x="62" y="137" font-size="11" fill="#1a237e" font-weight="bold">首要关切</text>
+  <text x="62" y="152" font-size="10" fill="#555">升级管控、外交后果、全局影响</text>
+
+  <rect x="290" y="120" width="230" height="38" rx="5" fill="#e8eaf6"/>
+  <text x="302" y="137" font-size="11" fill="#1a237e" font-weight="bold">决策速度</text>
+  <text x="302" y="152" font-size="10" fill="#555">审慎（数小时至数天）</text>
+
+  <rect x="50" y="165" width="230" height="38" rx="5" fill="#e8eaf6"/>
+  <text x="62" y="182" font-size="11" fill="#1a237e" font-weight="bold">信息特征</text>
+  <text x="62" y="197" font-size="10" fill="#555">经过筛选、有时被淡化</text>
+
+  <rect x="290" y="165" width="230" height="38" rx="5" fill="#e8eaf6"/>
+  <text x="302" y="182" font-size="11" fill="#1a237e" font-weight="bold">风险偏好</text>
+  <text x="302" y="197" font-size="10" fill="#555">低（战略后果考量）</text>
+
+  <rect x="50" y="210" width="230" height="38" rx="5" fill="#e8eaf6"/>
+  <text x="62" y="227" font-size="11" fill="#1a237e" font-weight="bold">授权模式</text>
+  <text x="62" y="242" font-size="10" fill="#555">寻求政治许可后行动</text>
+
+  <rect x="290" y="210" width="230" height="38" rx="5" fill="#e8eaf6"/>
+  <text x="302" y="227" font-size="11" fill="#1a237e" font-weight="bold">核心驱动力</text>
+  <text x="302" y="242" font-size="10" fill="#555">国家利益、政治考量</text>
+
+  <!-- Senior case -->
+  <rect x="50" y="258" width="470" height="60" rx="6" fill="#fff8e1" stroke="#f9a825" stroke-width="1"/>
+  <text x="285" y="278" text-anchor="middle" font-size="12" fill="#e65100" font-weight="bold">典型案例：纳拉瓦内在热钦山口的决策考量</text>
+  <text x="285" y="295" text-anchor="middle" font-size="10" fill="#795548">「国家在新冠冲击下摇摇欲坠 · 经济萎靡 · 全球供应链断裂」</text>
+  <text x="285" y="310" text-anchor="middle" font-size="10" fill="#795548">「中巴勾连威胁 · 国际舞台上谁是我们的支持者？」→ 结论：绝不开第一枪</text>
+
+  <!-- North Command淡化 case -->
+  <rect x="50" y="325" width="470" height="42" rx="6" fill="#ffebee"/>
+  <text x="285" y="342" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">信息淡化案例</text>
+  <text x="285" y="360" text-anchor="middle" font-size="10" fill="#555">北方司令部和第14军军长知道入侵但淡化——「积雪融化后帐篷会被淹没」</text>
+
+  <!-- ===== RIGHT: Junior Commanders ===== -->
+  <rect x="560" y="75" width="510" height="320" rx="10" fill="white" stroke="#c62828" stroke-width="2" filter="url(#ds)"/>
+  <rect x="560" y="75" width="510" height="38" rx="10" fill="url(#junior-bg)"/>
+  <rect x="560" y="103" width="510" height="10" fill="url(#junior-bg)"/>
+  <text x="815" y="100" text-anchor="middle" font-size="15" fill="white" font-weight="bold">基层指挥官（营级及以下）</text>
+
+  <!-- Seven dimensions -->
+  <rect x="580" y="120" width="230" height="38" rx="5" fill="#ffebee"/>
+  <text x="592" y="137" font-size="11" fill="#c62828" font-weight="bold">首要关切</text>
+  <text x="592" y="152" font-size="10" fill="#555">眼前战术态势、部队安全</text>
+
+  <rect x="820" y="120" width="230" height="38" rx="5" fill="#ffebee"/>
+  <text x="832" y="137" font-size="11" fill="#c62828" font-weight="bold">决策速度</text>
+  <text x="832" y="152" font-size="10" fill="#555">即时（分钟级）</text>
+
+  <rect x="580" y="165" width="230" height="38" rx="5" fill="#ffebee"/>
+  <text x="592" y="182" font-size="11" fill="#c62828" font-weight="bold">信息特征</text>
+  <text x="592" y="197" font-size="10" fill="#555">原始、地面实况、未经筛选</text>
+
+  <rect x="820" y="165" width="230" height="38" rx="5" fill="#ffebee"/>
+  <text x="832" y="182" font-size="11" fill="#c62828" font-weight="bold">风险偏好</text>
+  <text x="832" y="197" font-size="10" fill="#555">高（个人/战术层面）</text>
+
+  <rect x="580" y="210" width="230" height="38" rx="5" fill="#ffebee"/>
+  <text x="592" y="227" font-size="11" fill="#c62828" font-weight="bold">授权模式</text>
+  <text x="592" y="242" font-size="10" fill="#555">现有规则内行动，必要时突破边界</text>
+
+  <rect x="820" y="210" width="230" height="38" rx="5" fill="#ffebee"/>
+  <text x="832" y="227" font-size="11" fill="#c62828" font-weight="bold">核心驱动力</text>
+  <text x="832" y="242" font-size="10" fill="#555">团队荣誉、单位凝聚力、个人勇气</text>
+
+  <!-- Junior case -->
+  <rect x="580" y="258" width="470" height="60" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="815" y="278" text-anchor="middle" font-size="12" fill="#1b5e20" font-weight="bold">典型案例：加勒万「加塔克」排反击</text>
+  <text x="815" y="295" text-anchor="middle" font-size="10" fill="#555">巴布上校阵亡后，连排级领导者自发追击解放军越过实控线1公里以上</text>
+  <text x="815" y="310" text-anchor="middle" font-size="10" fill="#1b5e20">完全未经任何上级司令部授权——危机中涌现的事实上的任务式指挥</text>
+
+  <!-- Other junior cases -->
+  <rect x="580" y="325" width="470" height="42" rx="6" fill="#fff3e0"/>
+  <text x="815" y="342" text-anchor="middle" font-size="11" fill="#e65100" font-weight="bold">更多案例</text>
+  <text x="815" y="360" text-anchor="middle" font-size="10" fill="#555">洞朗旅长独自越境交涉 · 卡吉尔巴特拉上尉自主选择敌后进攻路线 · 桑多洛河师长12小时决策</text>
+
+  <!-- ===== CENTER: Historical Cases Timeline ===== -->
+  <rect x="30" y="410" width="1040" height="175" rx="10" fill="white" stroke="#7b1fa2" stroke-width="1.5" filter="url(#ds)"/>
+  <text x="550" y="435" text-anchor="middle" font-size="14" font-weight="bold" fill="#4a148c">基层主动性的四个关键案例</text>
+
+  <!-- Case 1: Sumdorong Chu 1986-87 -->
+  <rect x="50" y="450" width="235" height="110" rx="6" fill="#f3e5f5"/>
+  <text x="167" y="468" text-anchor="middle" font-size="11" fill="#6a1b9a" font-weight="bold">桑多洛河 1986-87</text>
+  <line x1="60" y1="474" x2="275" y2="474" stroke="#ce93d8"/>
+  <text x="167" y="490" text-anchor="middle" font-size="10" fill="#555">层级：师长（少将）</text>
+  <text x="167" y="506" text-anchor="middle" font-size="10" fill="#555">军长休假，指挥链犹豫不决</text>
+  <text x="167" y="522" text-anchor="middle" font-size="10" fill="#6a1b9a">自行下令增援隆格罗拉</text>
+  <text x="167" y="538" text-anchor="middle" font-size="10" fill="#6a1b9a" font-weight="bold">12小时完成部署</text>
+  <text x="167" y="554" text-anchor="middle" font-size="9" fill="#888">塑造了此后整个对峙走向</text>
+
+  <!-- Case 2: Kargil 1999 -->
+  <rect x="298" y="450" width="235" height="110" rx="6" fill="#e8f5e9"/>
+  <text x="415" y="468" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold">卡吉尔战争 1999</text>
+  <line x1="308" y1="474" x2="523" y2="474" stroke="#a5d6a7"/>
+  <text x="415" y="490" text-anchor="middle" font-size="10" fill="#555">层级：上尉/中校</text>
+  <text x="415" y="506" text-anchor="middle" font-size="10" fill="#555">巴特拉上尉自主选择敌后攀岩路线</text>
+  <text x="415" y="522" text-anchor="middle" font-size="10" fill="#1b5e20">零伤亡夺取5140高地</text>
+  <text x="415" y="538" text-anchor="middle" font-size="10" fill="#555">约希中校亲自发射反坦克导弹</text>
+  <text x="415" y="554" text-anchor="middle" font-size="9" fill="#888">「战斗基本在旅/营级进行」</text>
+
+  <!-- Case 3: Doklam 2017 -->
+  <rect x="546" y="450" width="235" height="110" rx="6" fill="#fff3e0"/>
+  <text x="663" y="468" text-anchor="middle" font-size="11" fill="#e65100" font-weight="bold">洞朗对峙 2017</text>
+  <line x1="556" y1="474" x2="771" y2="474" stroke="#ffcc80"/>
+  <text x="663" y="490" text-anchor="middle" font-size="10" fill="#555">层级：旅长（准将）</text>
+  <text x="663" y="506" text-anchor="middle" font-size="10" fill="#555">仅带一名随行人员</text>
+  <text x="663" y="522" text-anchor="middle" font-size="10" fill="#e65100">徒步越境警告中方后撤</text>
+  <text x="663" y="538" text-anchor="middle" font-size="10" fill="#555">未等待军/军区级授权</text>
+  <text x="663" y="554" text-anchor="middle" font-size="9" fill="#888">73天对峙——士兵组人链绝不退缩</text>
+
+  <!-- Case 4: Galwan 2020 -->
+  <rect x="794" y="450" width="255" height="110" rx="6" fill="#ffebee"/>
+  <text x="921" y="468" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">加勒万河谷 2020.6.15</text>
+  <line x1="804" y1="474" x2="1039" y2="474" stroke="#ef9a9a"/>
+  <text x="921" y="490" text-anchor="middle" font-size="10" fill="#555">层级：上校/连排</text>
+  <text x="921" y="506" text-anchor="middle" font-size="10" fill="#555">巴布上校率40人核实撤离→冲突</text>
+  <text x="921" y="522" text-anchor="middle" font-size="10" fill="#c62828">营长阵亡后连排级自发猛烈反击</text>
+  <text x="921" y="538" text-anchor="middle" font-size="10" fill="#c62828" font-weight="bold">追击越过实控线1公里以上</text>
+  <text x="921" y="554" text-anchor="middle" font-size="9" fill="#888">完全自发，无任何司令部授权</text>
+
+  <!-- ===== BOTTOM: Key Insight ===== -->
+  <rect x="30" y="600" width="1040" height="160" rx="10" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="550" y="628" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a148c">核心洞察：两套平行的指挥哲学</text>
+
+  <rect x="60" y="645" width="470" height="55" rx="6" fill="white"/>
+  <text x="295" y="664" text-anchor="middle" font-size="12" fill="#1a237e" font-weight="bold">和平/常态时期</text>
+  <text x="295" y="682" text-anchor="middle" font-size="11" fill="#555">高度集中、官僚化、「按规章办事」</text>
+  <text x="295" y="696" text-anchor="middle" font-size="10" fill="#888">「初级军官只能被看见，不能被听见」</text>
+
+  <text x="550" y="678" text-anchor="middle" font-size="24" fill="#7b1fa2" font-weight="bold">⟷</text>
+
+  <rect x="570" y="645" width="470" height="55" rx="6" fill="white"/>
+  <text x="805" y="664" text-anchor="middle" font-size="12" fill="#c62828" font-weight="bold">危机/战斗时期</text>
+  <text x="805" y="682" text-anchor="middle" font-size="11" fill="#555">有机涌现事实上的任务式指挥</text>
+  <text x="805" y="696" text-anchor="middle" font-size="10" fill="#888">通信中断、上级失联→基层军官自主塑造结果</text>
+
+  <text x="550" y="742" text-anchor="middle" font-size="12" fill="#4a148c" font-weight="bold">2020年6月修改交战规则——本质上是将加勒万已经发生的事实制度化</text>
+
+  <text x="550" y="772" text-anchor="middle" font-size="11" fill="#999">资料来源：纳拉瓦内《命运的四颗星》回忆录、比伦德尔·达诺阿分析、公开资料综合</text>
+</svg>

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 650" font-family="Microsoft YaHei, SimHei, sans-serif">
+  <defs>
+    <linearGradient id="timeline-bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e3f2fd"/>
+      <stop offset="50%" stop-color="#fff8e1"/>
+      <stop offset="100%" stop-color="#ffebee"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="650" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="550" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#b71c1c">热钦山口危机决策时间线</text>
+  <text x="550" y="56" text-anchor="middle" font-size="13" fill="#666">2020年8月31日 — 从威胁发现到坦克就位的关键2小时</text>
+
+  <!-- Timeline background -->
+  <rect x="50" y="75" width="1000" height="420" rx="8" fill="url(#timeline-bg)" opacity="0.5"/>
+
+  <!-- Timeline axis -->
+  <line x1="100" y1="130" x2="1020" y2="130" stroke="#1a237e" stroke-width="3"/>
+
+  <!-- Time markers -->
+  <circle cx="130" cy="130" r="8" fill="#1a237e"/>
+  <text x="130" y="118" text-anchor="middle" font-size="13" fill="#1a237e" font-weight="bold">20:15</text>
+
+  <circle cx="340" cy="130" r="8" fill="#e65100"/>
+  <text x="340" y="118" text-anchor="middle" font-size="13" fill="#e65100" font-weight="bold">20:15-20:45</text>
+
+  <circle cx="520" cy="130" r="8" fill="#c62828"/>
+  <text x="520" y="118" text-anchor="middle" font-size="13" fill="#c62828" font-weight="bold">21:10</text>
+
+  <circle cx="660" cy="130" r="8" fill="#c62828"/>
+  <text x="660" y="118" text-anchor="middle" font-size="13" fill="#c62828" font-weight="bold">21:25</text>
+
+  <circle cx="800" cy="130" r="8" fill="#b71c1c"/>
+  <text x="800" y="118" text-anchor="middle" font-size="13" fill="#b71c1c" font-weight="bold">22:10</text>
+
+  <circle cx="920" cy="130" r="8" fill="#1b5e20"/>
+  <text x="920" y="118" text-anchor="middle" font-size="13" fill="#1b5e20" font-weight="bold">~22:30</text>
+
+  <!-- Event 1: 20:15 -->
+  <rect x="60" y="150" width="140" height="100" rx="6" fill="white" stroke="#1a237e" stroke-width="1.5"/>
+  <text x="130" y="170" text-anchor="middle" font-size="11" fill="#1a237e" font-weight="bold">威胁发现</text>
+  <line x1="75" y1="178" x2="185" y2="178" stroke="#e0e0e0"/>
+  <text x="130" y="195" text-anchor="middle" font-size="10" fill="#333">约希中将通报:</text>
+  <text x="130" y="210" text-anchor="middle" font-size="10" fill="#333">4辆解放军坦克</text>
+  <text x="130" y="225" text-anchor="middle" font-size="10" fill="#333">+步兵向热钦山口</text>
+  <text x="130" y="240" text-anchor="middle" font-size="10" fill="#c62828">推进中</text>
+
+  <!-- Event 2: frantic calls -->
+  <rect x="240" y="150" width="200" height="100" rx="6" fill="white" stroke="#e65100" stroke-width="1.5"/>
+  <text x="340" y="170" text-anchor="middle" font-size="11" fill="#e65100" font-weight="bold">纳拉瓦内"疯狂致电"</text>
+  <line x1="255" y1="178" x2="425" y2="178" stroke="#e0e0e0"/>
+  <text x="340" y="195" text-anchor="middle" font-size="10" fill="#333">→ 国防部长拉杰纳特·辛格</text>
+  <text x="340" y="210" text-anchor="middle" font-size="10" fill="#333">→ NSA多瓦尔</text>
+  <text x="340" y="225" text-anchor="middle" font-size="10" fill="#333">→ CDS拉瓦特</text>
+  <text x="340" y="240" text-anchor="middle" font-size="10" fill="#c62828">"我的命令是什么？"</text>
+
+  <!-- Event 3: 21:10 -->
+  <rect x="455" y="150" width="130" height="85" rx="6" fill="white" stroke="#c62828" stroke-width="1.5"/>
+  <text x="520" y="170" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">第二次通报</text>
+  <line x1="468" y1="178" x2="572" y2="178" stroke="#e0e0e0"/>
+  <text x="520" y="196" text-anchor="middle" font-size="10" fill="#333">坦克距山顶</text>
+  <text x="520" y="211" text-anchor="middle" font-size="10" fill="#c62828" font-weight="bold">不足1公里</text>
+  <text x="520" y="228" text-anchor="middle" font-size="10" fill="#333">仍无指令</text>
+
+  <!-- Event 4: 21:25 -->
+  <rect x="595" y="150" width="130" height="85" rx="6" fill="white" stroke="#c62828" stroke-width="1.5"/>
+  <text x="660" y="170" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">再次致电RM</text>
+  <line x1="608" y1="178" x2="712" y2="178" stroke="#e0e0e0"/>
+  <text x="660" y="196" text-anchor="middle" font-size="10" fill="#333">"请求明确指示"</text>
+  <text x="660" y="211" text-anchor="middle" font-size="10" fill="#c62828">仍无明确答复</text>
+  <text x="660" y="228" text-anchor="middle" font-size="10" fill="#666">DGMO作战室讨论</text>
+
+  <!-- Event 5: 22:10 -->
+  <rect x="735" y="150" width="130" height="100" rx="6" fill="white" stroke="#b71c1c" stroke-width="2"/>
+  <text x="800" y="170" text-anchor="middle" font-size="11" fill="#b71c1c" font-weight="bold">第三次通报</text>
+  <line x1="748" y1="178" x2="852" y2="178" stroke="#e0e0e0"/>
+  <text x="800" y="196" text-anchor="middle" font-size="10" fill="#333">坦克距山顶</text>
+  <text x="800" y="211" text-anchor="middle" font-size="14" fill="#b71c1c" font-weight="bold">500米</text>
+  <text x="800" y="230" text-anchor="middle" font-size="10" fill="#333">约希建议动用</text>
+  <text x="800" y="244" text-anchor="middle" font-size="10" fill="#c62828">中型炮兵</text>
+
+  <!-- Event 6: ~22:30 Resolution -->
+  <rect x="870" y="150" width="160" height="100" rx="6" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2"/>
+  <text x="950" y="170" text-anchor="middle" font-size="11" fill="#1b5e20" font-weight="bold">最终获得授权</text>
+  <line x1="883" y1="178" x2="1017" y2="178" stroke="#c8e6c9"/>
+  <text x="950" y="196" text-anchor="middle" font-size="10" fill="#333">RM转达总理指示:</text>
+  <text x="950" y="215" text-anchor="middle" font-size="13" fill="#1b5e20" font-weight="bold">"做你认为合适的事"</text>
+  <text x="950" y="234" text-anchor="middle" font-size="10" fill="#333">纳拉瓦内下令:</text>
+  <text x="950" y="248" text-anchor="middle" font-size="10" fill="#1b5e20">T-90坦克前出·压低炮口</text>
+
+  <!-- The 55-minute gap highlight -->
+  <rect x="130" y="280" width="790" height="42" rx="6" fill="#fff3e0" stroke="#ff6f00" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="525" y="298" text-anchor="middle" font-size="14" fill="#e65100" font-weight="bold">⏱ 等待政治授权：约55分钟（20:15 → ~22:30）</text>
+  <text x="525" y="314" text-anchor="middle" font-size="11" fill="#795548">战术层面数分钟即可完成的行动，因政治授权流程延迟近1小时</text>
+
+  <!-- Naravane's dilemma box -->
+  <rect x="80" y="340" width="940" height="70" rx="8" fill="white" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="550" y="362" text-anchor="middle" font-size="13" fill="#4a148c" font-weight="bold">纳拉瓦内的困境</text>
+  <text x="550" y="382" text-anchor="middle" font-size="12" fill="#333">"我夹在想要动用一切手段开火的司令部</text>
+  <text x="550" y="400" text-anchor="middle" font-size="12" fill="#333">和尚未向我下达明确执行指令的内阁安全委员会之间"</text>
+
+  <!-- Result box -->
+  <rect x="80" y="428" width="450" height="58" rx="6" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1"/>
+  <text x="305" y="450" text-anchor="middle" font-size="12" fill="#1b5e20" font-weight="bold">结果：印方T-90坦克抵达山口前沿</text>
+  <text x="305" y="468" text-anchor="middle" font-size="11" fill="#333">炮口直指解放军坦克——对方距山顶数百米处停车</text>
+  <text x="305" y="480" text-anchor="middle" font-size="10" fill="#666">战术行动本身仅耗时数分钟</text>
+
+  <!-- Comparison box -->
+  <rect x="550" y="428" width="470" height="58" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+  <text x="785" y="450" text-anchor="middle" font-size="12" fill="#b71c1c" font-weight="bold">对比：中国中央军委体制</text>
+  <text x="785" y="468" text-anchor="middle" font-size="11" fill="#333">习近平→战区司令部→作战部队：直接指挥，无文官中介</text>
+  <text x="785" y="480" text-anchor="middle" font-size="10" fill="#666">纳拉瓦内判断拉达克行动"必须得到最高层祝福"</text>
+
+  <!-- Bottom insight -->
+  <rect x="80" y="510" width="940" height="110" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1"/>
+  <text x="550" y="535" text-anchor="middle" font-size="14" fill="#4a148c" font-weight="bold">本案例揭示的核心矛盾</text>
+
+  <rect x="110" y="550" width="280" height="52" rx="5" fill="white"/>
+  <text x="250" y="570" text-anchor="middle" font-size="11" fill="#1a237e" font-weight="bold">民主文官控制的必要性</text>
+  <text x="250" y="588" text-anchor="middle" font-size="10" fill="#555">两个有核国家对峙，开火决定</text>
+  <text x="250" y="600" text-anchor="middle" font-size="10" fill="#555">确实应由政治领导人做出</text>
+
+  <text x="550" y="582" text-anchor="middle" font-size="24" fill="#7b1fa2" font-weight="bold">vs</text>
+
+  <rect x="710" y="550" width="280" height="52" rx="5" fill="white"/>
+  <text x="850" y="570" text-anchor="middle" font-size="11" fill="#b71c1c" font-weight="bold">战场响应速度的需要</text>
+  <text x="850" y="588" text-anchor="middle" font-size="10" fill="#555">坦克500米外推进，炮兵准备就绪</text>
+  <text x="850" y="600" text-anchor="middle" font-size="10" fill="#555">等待1小时可能意味着丧失阵地</text>
+
+  <text x="550" y="640" text-anchor="middle" font-size="11" fill="#999">资料来源：纳拉瓦内《命运的四颗星》回忆录、The Caravan 2026年1月报道</text>
+</svg>

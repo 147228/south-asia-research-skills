@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" font-family="Microsoft YaHei, SimHei, sans-serif">
+  <defs>
+    <linearGradient id="bar-fast" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b5e20"/>
+      <stop offset="100%" stop-color="#4caf50"/>
+    </linearGradient>
+    <linearGradient id="bar-med" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e65100"/>
+      <stop offset="100%" stop-color="#ff9800"/>
+    </linearGradient>
+    <linearGradient id="bar-slow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#b71c1c"/>
+      <stop offset="100%" stop-color="#ef5350"/>
+    </linearGradient>
+    <filter id="bs">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="700" fill="#fafafa" rx="12"/>
+
+  <!-- Title -->
+  <text x="550" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a237e">印度军方各层级响应速度对比</text>
+  <text x="550" y="58" text-anchor="middle" font-size="13" fill="#888">从战斗机紧急起飞到打击军动员——响应时限跨越4个数量级</text>
+
+  <!-- Legend -->
+  <rect x="700" y="68" width="14" height="14" rx="3" fill="url(#bar-fast)"/>
+  <text x="720" y="80" font-size="11" fill="#555">分钟-小时级</text>
+  <rect x="810" y="68" width="14" height="14" rx="3" fill="url(#bar-med)"/>
+  <text x="830" y="80" font-size="11" fill="#555">天级</text>
+  <rect x="890" y="68" width="14" height="14" rx="3" fill="url(#bar-slow)"/>
+  <text x="910" y="80" font-size="11" fill="#555">周-月级</text>
+
+  <!-- Y-axis labels and bars -->
+  <!-- Scale: log-ish, max bar width = 620px for 27 days -->
+  <!-- Reference: 5min=1, 1hr=12, 48hr=576, 72hr=864, 21days=6048, 27days=7776 -->
+  <!-- Using: px = value_hours * 620/648 capped at 620 -->
+
+  <!-- 1. Fighter scramble: 5-7 min ≈ 0.1hr -->
+  <text x="280" y="117" text-anchor="end" font-size="12" fill="#333">列城战斗机紧急起飞</text>
+  <text x="280" y="131" text-anchor="end" font-size="10" fill="#888">米格-29待命状态</text>
+  <rect x="290" y="110" width="8" height="24" rx="3" fill="url(#bar-fast)" filter="url(#bs)"/>
+  <text x="305" y="127" font-size="12" fill="#1b5e20" font-weight="bold">5-7 分钟</text>
+
+  <!-- 2. Rechin La tactical: ~1hr (5min action + 55min wait) -->
+  <text x="280" y="162" text-anchor="end" font-size="12" fill="#333">热钦山口坦克就位</text>
+  <text x="280" y="176" text-anchor="end" font-size="10" fill="#888">含55分钟等待政治授权</text>
+  <rect x="290" y="155" width="18" height="24" rx="3" fill="url(#bar-fast)" filter="url(#bs)"/>
+  <rect x="290" y="155" width="15" height="24" rx="3" fill="#ff9800" opacity="0.6"/>
+  <text x="315" y="172" font-size="12" fill="#e65100" font-weight="bold">~1 小时</text>
+  <text x="395" y="172" font-size="10" fill="#c62828">（战术动作仅数分钟）</text>
+
+  <!-- 3. IBG target: 12-48hr -->
+  <text x="280" y="207" text-anchor="end" font-size="12" fill="#333">综合战斗群(IBG)</text>
+  <text x="280" y="221" text-anchor="end" font-size="10" fill="#888">目标值，视前沿距离</text>
+  <rect x="290" y="200" width="62" height="24" rx="3" fill="url(#bar-fast)" filter="url(#bs)"/>
+  <text x="360" y="217" font-size="12" fill="#1b5e20" font-weight="bold">12-48 小时</text>
+
+  <!-- 4. Rudra Brigade: ~0 -->
+  <text x="280" y="252" text-anchor="end" font-size="12" fill="#333">鲁德拉旅「冷打击」</text>
+  <text x="280" y="266" text-anchor="end" font-size="10" fill="#888">2025年验证，常驻前沿</text>
+  <rect x="290" y="245" width="5" height="24" rx="3" fill="#1b5e20" filter="url(#bs)"/>
+  <text x="302" y="262" font-size="12" fill="#1b5e20" font-weight="bold">接近零延迟</text>
+  <rect x="414" y="248" width="42" height="18" rx="4" fill="#1b5e20"/>
+  <text x="435" y="261" text-anchor="middle" font-size="9" fill="white" font-weight="bold">最新</text>
+
+  <!-- 5. Brigade mobilization: 45-48hr -->
+  <text x="280" y="302" text-anchor="end" font-size="12" fill="#333">旅级动员（450km机动）</text>
+  <text x="280" y="316" text-anchor="end" font-size="10" fill="#888">2011年演习验证</text>
+  <rect x="290" y="295" width="66" height="24" rx="3" fill="url(#bar-med)" filter="url(#bs)"/>
+  <text x="363" y="312" font-size="12" fill="#e65100" font-weight="bold">45-48 小时</text>
+
+  <!-- 6. Division mobilization: 48-58hr -->
+  <text x="280" y="347" text-anchor="end" font-size="12" fill="#333">师级动员</text>
+  <text x="280" y="361" text-anchor="end" font-size="10" fill="#888">在旅级基础上+10小时</text>
+  <rect x="290" y="340" width="76" height="24" rx="3" fill="url(#bar-med)" filter="url(#bs)"/>
+  <text x="373" y="357" font-size="12" fill="#e65100" font-weight="bold">48-58 小时</text>
+
+  <!-- 7. Cold Start target: 72-96hr -->
+  <text x="280" y="392" text-anchor="end" font-size="12" fill="#333">冷启动学说（军级）</text>
+  <text x="280" y="406" text-anchor="end" font-size="10" fill="#888">目标值，从未完整验证</text>
+  <rect x="290" y="385" width="110" height="24" rx="3" fill="url(#bar-med)" filter="url(#bs)"/>
+  <text x="408" y="402" font-size="12" fill="#e65100" font-weight="bold">72-96 小时</text>
+
+  <!-- 8. Uri surgical strike: 11 days -->
+  <text x="280" y="437" text-anchor="end" font-size="12" fill="#333">外科手术式打击(2016)</text>
+  <text x="280" y="451" text-anchor="end" font-size="10" fill="#888">总理拍板后6天执行</text>
+  <rect x="290" y="430" width="200" height="24" rx="3" fill="url(#bar-med)" filter="url(#bs)"/>
+  <text x="498" y="447" font-size="12" fill="#e65100" font-weight="bold">11 天</text>
+
+  <!-- 9. Balakot: 12 days -->
+  <text x="280" y="482" text-anchor="end" font-size="12" fill="#333">巴拉科特空袭(2019)</text>
+  <text x="280" y="496" text-anchor="end" font-size="10" fill="#888">总理拍板后3天执行</text>
+  <rect x="290" y="475" width="218" height="24" rx="3" fill="url(#bar-med)" filter="url(#bs)"/>
+  <text x="515" y="492" font-size="12" fill="#e65100" font-weight="bold">12 天</text>
+
+  <!-- 10. Kargil: 21-23 days -->
+  <text x="280" y="527" text-anchor="end" font-size="12" fill="#333">卡吉尔发现至进攻(1999)</text>
+  <text x="280" y="541" text-anchor="end" font-size="10" fill="#888">5月3日发现→5月26日</text>
+  <rect x="290" y="520" width="370" height="24" rx="3" fill="url(#bar-slow)" filter="url(#bs)"/>
+  <text x="668" y="537" font-size="12" fill="#b71c1c" font-weight="bold">21-23 天</text>
+
+  <!-- 11. Strike Corps: 21-27 days -->
+  <text x="280" y="572" text-anchor="end" font-size="12" fill="#333">打击军动员(2001基线)</text>
+  <text x="280" y="586" text-anchor="end" font-size="10" fill="#888">「勇气行动」50万部队</text>
+  <rect x="290" y="565" width="440" height="24" rx="3" fill="url(#bar-slow)" filter="url(#bs)"/>
+  <text x="738" y="582" font-size="12" fill="#b71c1c" font-weight="bold">21-27 天</text>
+
+  <!-- 12. Ladakh full: 2-3 months -->
+  <text x="280" y="617" text-anchor="end" font-size="12" fill="#333">拉达克全面部署(2020)</text>
+  <text x="280" y="631" text-anchor="end" font-size="10" fill="#888">1个师扩至3个师</text>
+  <rect x="290" y="610" width="620" height="24" rx="3" fill="url(#bar-slow)" filter="url(#bs)"/>
+  <text x="700" y="627" font-size="12" fill="white" font-weight="bold">2-3 个月</text>
+
+  <!-- Insight box -->
+  <rect x="50" y="650" width="1000" height="36" rx="6" fill="#e8eaf6" stroke="#3949ab" stroke-width="1"/>
+  <text x="550" y="673" text-anchor="middle" font-size="12" fill="#1a237e" font-weight="bold">关键洞察：「冷启动」→「冷打击」改革将前沿部署从48小时压缩至接近零延迟，但全面动员仍受地理与后勤制约</text>
+
+</svg>
