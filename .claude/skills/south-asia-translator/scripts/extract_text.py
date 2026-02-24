@@ -57,6 +57,27 @@ def extract_from_txt(file_path: Path) -> str:
     raise ValueError(f"无法识别文件编码: {file_path}")
 
 
+def extract_from_epub(file_path: Path) -> str:
+    """从 .epub 文件提取文本"""
+    try:
+        import ebooklib
+        from ebooklib import epub
+        from bs4 import BeautifulSoup
+
+        book = epub.read_epub(str(file_path), options={'ignore_ncx': True})
+        text_parts = []
+        for item in book.get_items_of_type(ebooklib.ITEM_DOCUMENT):
+            soup = BeautifulSoup(item.get_content(), 'html.parser')
+            text = soup.get_text(separator='\n')
+            text = text.strip()
+            if text:
+                text_parts.append(text)
+        return '\n\n'.join(text_parts)
+    except ImportError:
+        print("错误：需要安装 ebooklib 和 beautifulsoup4: pip install ebooklib beautifulsoup4")
+        sys.exit(1)
+
+
 def clean_text(text: str) -> str:
     """清理提取的文本"""
     # 移除 InDesign 页面标记
@@ -71,7 +92,7 @@ def clean_text(text: str) -> str:
 def main():
     if len(sys.argv) < 2:
         print("用法: python extract_text.py <input_file> [output_file]")
-        print("支持格式: .docx, .pdf, .txt")
+        print("支持格式: .docx, .pdf, .txt, .epub")
         sys.exit(1)
 
     input_path = Path(sys.argv[1])
@@ -84,6 +105,7 @@ def main():
         '.docx': extract_from_docx,
         '.pdf': extract_from_pdf,
         '.txt': extract_from_txt,
+        '.epub': extract_from_epub,
     }
 
     if ext not in extractors:
