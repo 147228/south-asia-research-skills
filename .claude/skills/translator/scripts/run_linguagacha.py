@@ -142,9 +142,9 @@ def setup_config(api_url=None, api_key=None, model_id=None, concurrency=20):
                 "type": "CUSTOM_OPENAI",
                 "name": "Custom Model",
                 "api_format": "OpenAI",
-                "api_url": "https://yunwu.ai/v1",
+                "api_url": "https://xxxx.xxx/v1",
                 "api_key": "your-api-key",
-                "model_id": "gemini-2.5-flash",
+                "model_id": "gemini-3-flash-preview",
                 "request": {"extra_headers": {}, "extra_body": {},
                             "extra_headers_custom_enable": False,
                             "extra_body_custom_enable": False},
@@ -386,9 +386,9 @@ def main():
     remaining, glossary, prompt = parse_extra_args(extra_args)
 
     if action == 'setup':
-        api_url = input("API URL [https://yunwu.ai/v1]: ").strip() or "https://yunwu.ai/v1"
+        api_url = input("API URL [https://xxxx.xxx/v1]: ").strip() or "https://xxxx.xxx/v1"
         api_key = input("API Key: ").strip()
-        model_id = input("Model ID [gemini-2.5-flash]: ").strip() or "gemini-2.5-flash"
+        model_id = input("Model ID [gemini-3-flash-preview]: ").strip() or "gemini-3-flash-preview"
         concurrency = int(input("并发数 [20]: ").strip() or "20")
         setup_config(api_url, api_key, model_id, concurrency)
 

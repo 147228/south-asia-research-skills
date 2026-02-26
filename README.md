@@ -11,7 +11,7 @@ git clone https://github.com/147228/south-asia-research-skills.git
 
 ## 两种使用模式
 
-### 模式一：开箱即用（Claude 直译）
+### 模式一：开箱即用（Claude 翻译）
 
 无需任何配置，在 Claude Code 中直接使用：
 
@@ -20,7 +20,7 @@ git clone https://github.com/147228/south-asia-research-skills.git
 The rapid development of artificial intelligence...
 ```
 
-适合：段落级翻译、即时查看、500词以内短文。
+适合：段落级翻译、即时查看。长文也可用 Claude 分批翻译（保持原结构、生成对照表）。
 
 ### 模式二：LinguaGacha 增强（推荐，适合长文/书籍）
 
