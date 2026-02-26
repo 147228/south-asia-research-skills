@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-extract_text.py - 从 docx/pdf/txt/epub 文件中提取纯文本
+extract_text.py - 从 docx/pdf 文件中提取纯文本
 用法: python extract_text.py <input_file> [output_file]
 """
 

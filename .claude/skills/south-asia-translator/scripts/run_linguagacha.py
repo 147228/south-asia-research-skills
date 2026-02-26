@@ -2,16 +2,12 @@
 """
 run_linguagacha.py - LinguaGacha 翻译流水线控制脚本
 用法:
-  python run_linguagacha.py setup              # 首次配置
-  python run_linguagacha.py create <input>     # 创建项目
-  python run_linguagacha.py start              # 开始/续翻
-  python run_linguagacha.py status             # 查看进度
-  python run_linguagacha.py export             # 导出翻译
-  python run_linguagacha.py retry              # 重试失败项
-
-可选参数:
-  --glossary <path>    指定自定义术语表（JSON格式）
-  --prompt <path>      指定自定义翻译提示词
+  python run_linguagacha.py setup          # 首次配置
+  python run_linguagacha.py create <input>  # 创建项目
+  python run_linguagacha.py start           # 开始翻译
+  python run_linguagacha.py status          # 查看进度
+  python run_linguagacha.py export          # 导出翻译
+  python run_linguagacha.py retry           # 重试失败项
 """
 
 import sys
@@ -39,91 +35,6 @@ def check_lg_installed():
         print("下载地址: https://github.com/neavo/LinguaGacha/releases")
         return False
     return True
-
-
-## === 领域关键词映射（用于自动选择术语表） ===
-DOMAIN_KEYWORDS = {
-    'microsoft_it_terminology.json': [
-        'software', 'API', 'server', 'database', 'cloud', 'Windows', 'Azure',
-        'Microsoft', 'Linux', 'Docker', 'Kubernetes', 'DevOps', 'SQL', 'HTTP',
-        'TCP', 'DNS', 'SSL', 'firewall', 'virtual machine', 'deployment',
-        'backend', 'frontend', 'framework', 'SDK', 'runtime', 'compiler',
-        'GitHub', 'repository', 'pipeline', 'microservice', 'REST', 'JSON',
-    ],
-    'south_asia_military.json': [
-        'India', 'Pakistan', 'Kashmir', 'Modi', 'military', 'border',
-        'defence', 'defense', 'army', 'navy', 'air force', 'battalion',
-        'brigade', 'division', 'corps', 'regiment', 'LAC', 'LoC',
-        'Ladakh', 'Galwan', 'Doklam', 'Siachen', 'COAS', 'CDS',
-        'nuclear', 'missile', 'ceasefire', 'insurgency', 'AFSPA',
-        'Delhi', 'Islamabad', 'Sri Lanka', 'Bangladesh', 'Nepal',
-    ],
-}
-
-
-def detect_domain(input_path):
-    """扫描输入文本前100行，检测最匹配的领域术语表"""
-    try:
-        with open(input_path, 'r', encoding='utf-8') as f:
-            sample = ''.join(f.readline() for _ in range(100))
-    except Exception:
-        return None
-
-    sample_lower = sample.lower()
-    scores = {}
-    for glossary_name, keywords in DOMAIN_KEYWORDS.items():
-        score = sum(1 for kw in keywords if kw.lower() in sample_lower)
-        if score > 0:
-            scores[glossary_name] = score
-
-    if not scores:
-        return None
-
-    best = max(scores, key=scores.get)
-    print(f"领域检测: {', '.join(f'{k}={v}' for k, v in sorted(scores.items(), key=lambda x: -x[1]))}")
-    print(f"自动选择术语表: {best} (匹配 {scores[best]} 个关键词)")
-    return best
-
-
-def find_glossary(glossary_arg=None, input_path=None):
-    """查找术语表文件（支持智能领域检测）"""
-    if glossary_arg:
-        p = Path(glossary_arg)
-        if p.exists():
-            return p
-        # 尝试在 glossaries 目录下查找
-        p2 = GLOSSARIES_DIR / glossary_arg
-        if p2.exists():
-            return p2
-        print(f"术语表不存在: {glossary_arg}")
-        return None
-
-    # 智能检测：根据输入文本内容选择术语表
-    if input_path:
-        detected = detect_domain(input_path)
-        if detected:
-            glossary_path = GLOSSARIES_DIR / detected
-            if glossary_path.exists():
-                return glossary_path
-        else:
-            print("未检测到匹配领域，不加载术语表")
-            return None
-
-    # 兜底：无输入文件时不自动加载
-    return None
-
-
-def find_prompt(prompt_arg=None):
-    """查找翻译提示词文件"""
-    if prompt_arg:
-        p = Path(prompt_arg)
-        if p.exists():
-            return p
-    # 默认提示词
-    default = TEMPLATES_DIR / "academic_prompt.txt"
-    if default.exists():
-        return default
-    return None
 
 
 def setup_config(api_url=None, api_key=None, model_id=None, concurrency=20):
@@ -182,7 +93,7 @@ def setup_config(api_url=None, api_key=None, model_id=None, concurrency=20):
     return output
 
 
-def create_project(input_path, project_name=None, glossary=None, prompt=None):
+def create_project(input_path, project_name=None, glossary=None):
     """创建 LinguaGacha 翻译项目"""
     if not check_lg_installed():
         return
@@ -209,8 +120,7 @@ def create_project(input_path, project_name=None, glossary=None, prompt=None):
 
     # 构建命令
     config_path = BASE_DIR / "linguagacha_config.json"
-    glossary_path = find_glossary(glossary, input_path=input_path)
-    prompt_path = find_prompt(prompt)
+    prompt_path = TEMPLATES_DIR / "academic_prompt.txt"
 
     cmd = [
         str(LG_EXE), "--cli", "--create",
@@ -221,17 +131,17 @@ def create_project(input_path, project_name=None, glossary=None, prompt=None):
         "--target_language", "ZH",
     ]
 
-    if glossary_path:
-        cmd.extend(["--glossary", str(glossary_path)])
-    if prompt_path:
+    if glossary:
+        cmd.extend(["--glossary", str(glossary)])
+    elif (GLOSSARIES_DIR / "south_asia_military.json").exists():
+        cmd.extend(["--glossary", str(GLOSSARIES_DIR / "south_asia_military.json")])
+
+    if prompt_path.exists():
         cmd.extend(["--custom_prompt_zh", str(prompt_path)])
 
     print(f"正在创建项目并启动翻译...")
     print(f"  项目: {project_file}")
-    if glossary_path:
-        print(f"  术语表: {glossary_path.name}")
-    if prompt_path:
-        print(f"  提示词: {prompt_path.name}")
+    print(f"  命令: {' '.join(cmd[:6])}...")
     subprocess.run(cmd)
 
 
@@ -263,11 +173,10 @@ def check_status(project_file):
 
     print(f"=== 翻译进度 ===")
     print(f"总条目: {total}")
-    if total > 0:
-        print(f"已翻译: {processed} ({processed/total*100:.1f}%)")
-        print(f"已跳过: {skipped}")
-        print(f"待处理: {pending}")
-        print(f"失败: {error}")
+    print(f"已翻译: {processed} ({processed/total*100:.1f}%)")
+    print(f"已跳过: {skipped}")
+    print(f"待处理: {pending}")
+    print(f"失败: {error}")
 
     for s, cnt in sorted(status_counts.items(), key=lambda x: -x[1]):
         print(f"  {s}: {cnt}")
@@ -311,13 +220,13 @@ def export_translation(project_file, output_file=None):
     print(f"  字符: {len(output):,}")
 
 
-def continue_translation(project_file, glossary=None, prompt=None):
+def continue_translation(project_file):
     """断点续翻"""
     if not check_lg_installed():
         return
     config_path = BASE_DIR / "linguagacha_config.json"
-    glossary_path = find_glossary(glossary)
-    prompt_path = find_prompt(prompt)
+    prompt_path = TEMPLATES_DIR / "academic_prompt.txt"
+    glossary_path = GLOSSARIES_DIR / "south_asia_military.json"
 
     cmd = [
         str(LG_EXE), "--cli",
@@ -325,22 +234,22 @@ def continue_translation(project_file, glossary=None, prompt=None):
         "--config", str(config_path),
         "--continue",
     ]
-    if glossary_path:
+    if glossary_path.exists():
         cmd.extend(["--glossary", str(glossary_path)])
-    if prompt_path:
+    if prompt_path.exists():
         cmd.extend(["--custom_prompt_zh", str(prompt_path)])
 
     print("断点续翻...")
     subprocess.run(cmd)
 
 
-def retry_failed(project_file, glossary=None, prompt=None):
+def retry_failed(project_file):
     """重试失败项"""
     if not check_lg_installed():
         return
     config_path = BASE_DIR / "linguagacha_config.json"
-    glossary_path = find_glossary(glossary)
-    prompt_path = find_prompt(prompt)
+    prompt_path = TEMPLATES_DIR / "academic_prompt.txt"
+    glossary_path = GLOSSARIES_DIR / "south_asia_military.json"
 
     cmd = [
         str(LG_EXE), "--cli",
@@ -348,32 +257,13 @@ def retry_failed(project_file, glossary=None, prompt=None):
         "--config", str(config_path),
         "--reset_failed",
     ]
-    if glossary_path:
+    if glossary_path.exists():
         cmd.extend(["--glossary", str(glossary_path)])
-    if prompt_path:
+    if prompt_path.exists():
         cmd.extend(["--custom_prompt_zh", str(prompt_path)])
 
     print("重试失败项...")
     subprocess.run(cmd)
-
-
-def parse_extra_args(args):
-    """解析额外参数 --glossary 和 --prompt"""
-    glossary = None
-    prompt = None
-    i = 0
-    remaining = []
-    while i < len(args):
-        if args[i] == '--glossary' and i + 1 < len(args):
-            glossary = args[i + 1]
-            i += 2
-        elif args[i] == '--prompt' and i + 1 < len(args):
-            prompt = args[i + 1]
-            i += 2
-        else:
-            remaining.append(args[i])
-            i += 1
-    return remaining, glossary, prompt
 
 
 def main():
@@ -382,8 +272,6 @@ def main():
         return
 
     action = sys.argv[1].lower()
-    extra_args = sys.argv[2:]
-    remaining, glossary, prompt = parse_extra_args(extra_args)
 
     if action == 'setup':
         api_url = input("API URL [https://yunwu.ai/v1]: ").strip() or "https://yunwu.ai/v1"
@@ -393,55 +281,53 @@ def main():
         setup_config(api_url, api_key, model_id, concurrency)
 
     elif action == 'create':
-        if not remaining:
-            print("用法: python run_linguagacha.py create <input_file_or_dir> [--glossary path] [--prompt path]")
+        if len(sys.argv) < 3:
+            print("用法: python run_linguagacha.py create <input_file_or_dir>")
             return
-        create_project(remaining[0],
-                        project_name=remaining[1] if len(remaining) > 1 else None,
-                        glossary=glossary, prompt=prompt)
+        create_project(sys.argv[2],
+                        project_name=sys.argv[3] if len(sys.argv) > 3 else None)
 
     elif action == 'status':
-        if remaining:
-            check_status(remaining[0])
-        else:
+        if len(sys.argv) < 3:
+            # 查找最近的 .lg 文件
             lg_files = list(BASE_DIR.glob("*.lg"))
             if lg_files:
                 check_status(max(lg_files, key=lambda f: f.stat().st_mtime))
             else:
                 print("未找到项目文件。请指定路径。")
+        else:
+            check_status(sys.argv[2])
 
     elif action == 'export':
-        if remaining:
-            export_translation(remaining[0],
-                                remaining[1] if len(remaining) > 1 else None)
-        else:
+        if len(sys.argv) < 3:
             lg_files = list(BASE_DIR.glob("*.lg"))
             if lg_files:
                 export_translation(max(lg_files, key=lambda f: f.stat().st_mtime))
             else:
                 print("未找到项目文件。")
+        else:
+            export_translation(sys.argv[2],
+                                sys.argv[3] if len(sys.argv) > 3 else None)
 
     elif action in ('continue', 'start'):
-        if remaining:
-            continue_translation(remaining[0], glossary=glossary, prompt=prompt)
-        else:
+        if len(sys.argv) < 3:
             lg_files = list(BASE_DIR.glob("*.lg"))
             if lg_files:
-                continue_translation(max(lg_files, key=lambda f: f.stat().st_mtime),
-                                      glossary=glossary, prompt=prompt)
+                continue_translation(max(lg_files, key=lambda f: f.stat().st_mtime))
             else:
                 print("未找到项目文件。")
+        else:
+            continue_translation(sys.argv[2])
 
     elif action == 'retry':
-        if remaining:
-            retry_failed(remaining[0], glossary=glossary, prompt=prompt)
-        else:
+        if len(sys.argv) < 3:
             lg_files = list(BASE_DIR.glob("*.lg"))
             if lg_files:
-                retry_failed(max(lg_files, key=lambda f: f.stat().st_mtime),
-                              glossary=glossary, prompt=prompt)
+                retry_failed(max(lg_files, key=lambda f: f.stat().st_mtime))
             else:
                 print("未找到项目文件。")
+        else:
+            retry_failed(sys.argv[2])
 
     else:
         print(f"未知操作: {action}")
