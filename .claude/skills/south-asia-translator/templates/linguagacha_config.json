@@ -2,15 +2,15 @@
     "version": "0.55.0",
     "source_language": "EN",
     "target_language": "ZH",
-    "activate_model_id": "yunwu-gemini",
+    "activate_model_id": "custom-model",
     "models": [
         {
-            "id": "yunwu-gemini",
+            "id": "custom-model",
             "type": "CUSTOM_OPENAI",
-            "name": "Yunwu Gemini Flash",
+            "name": "Custom Model",
             "api_format": "OpenAI",
-            "api_url": "https://yunwu.ai/v1",
-            "api_key": "sk-AQSvaUtecNRVf4pYKHWgRqSXkB3ItUssnrcBIa6smt5XoasS",
+            "api_url": "https://your-api-provider.com/v1",
+            "api_key": "YOUR_API_KEY_HERE",
             "model_id": "gemini-3-flash-preview",
             "request": {
                 "extra_headers": {},

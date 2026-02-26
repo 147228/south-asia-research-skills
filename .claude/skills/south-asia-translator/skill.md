@@ -468,7 +468,7 @@ LinguaGacha (翻译引擎) + 第三方LLM API (OpenAI兼容) + Claude Code (审�
 
 ### 前置要求
 - LinguaGacha v0.55.0+（下载: https://github.com/neavo/LinguaGacha/releases）
-- OpenAI兼容API（如 yunwu.ai、OpenRouter、本地部署等）
+- OpenAI兼容API（如 OpenRouter、本地部署等）
 - Python 3.9+，python-docx 库
 
 ### 六步工作流
@@ -510,7 +510,7 @@ python run_linguagacha.py setup
 | temperature | 0.3 | 低温度保证翻译一致性 |
 
 **经验法则**：
-- yunwu.ai 等代理：并发 ≤ 20，否则429限流
+- API代理服务：并发 ≤ 20，否则429限流
 - 官方API：并发可到 50+
 - 思考模型（如Gemini Flash）：output_token_limit 必须 ≥ 16384
 

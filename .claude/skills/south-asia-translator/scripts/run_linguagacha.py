@@ -37,6 +37,78 @@ def check_lg_installed():
     return True
 
 
+# === 领域关键词映射（用于智能选择术语表） ===
+DOMAIN_KEYWORDS = {
+    'microsoft_it_terminology.json': [
+        'software', 'API', 'server', 'database', 'cloud', 'Windows', 'Azure',
+        'Microsoft', 'Linux', 'Docker', 'Kubernetes', 'DevOps', 'SQL', 'HTTP',
+        'TCP', 'DNS', 'SSL', 'firewall', 'virtual machine', 'deployment',
+        'backend', 'frontend', 'framework', 'SDK', 'runtime', 'compiler',
+        'GitHub', 'repository', 'pipeline', 'microservice', 'REST', 'JSON',
+    ],
+    'south_asia_military.json': [
+        'India', 'Pakistan', 'Kashmir', 'Modi', 'military', 'border',
+        'defence', 'defense', 'army', 'navy', 'air force', 'battalion',
+        'brigade', 'division', 'corps', 'regiment', 'LAC', 'LoC',
+        'Ladakh', 'Galwan', 'Doklam', 'Siachen', 'COAS', 'CDS',
+        'nuclear', 'missile', 'ceasefire', 'insurgency', 'AFSPA',
+        'Delhi', 'Islamabad', 'Sri Lanka', 'Bangladesh', 'Nepal',
+    ],
+}
+
+
+def detect_domain(input_path):
+    """扫描输入文本前100行，检测最匹配的领域术语表"""
+    try:
+        with open(input_path, 'r', encoding='utf-8') as f:
+            sample = ''.join(f.readline() for _ in range(100))
+    except Exception:
+        return None
+
+    sample_lower = sample.lower()
+    scores = {}
+    for glossary_name, keywords in DOMAIN_KEYWORDS.items():
+        score = sum(1 for kw in keywords if kw.lower() in sample_lower)
+        if score > 0:
+            scores[glossary_name] = score
+
+    if not scores:
+        return None
+
+    best = max(scores, key=scores.get)
+    print(f"领域检测: {', '.join(f'{k}={v}' for k, v in sorted(scores.items(), key=lambda x: -x[1]))}")
+    print(f"自动选择术语表: {best} (匹配 {scores[best]} 个关键词)")
+    return best
+
+
+def find_glossary(glossary_arg=None, input_path=None):
+    """查找术语表（支持手动指定或智能检测）"""
+    # 手动指定优先
+    if glossary_arg:
+        p = Path(glossary_arg)
+        if p.exists():
+            return p
+        p2 = GLOSSARIES_DIR / glossary_arg
+        if p2.exists():
+            return p2
+        print(f"术语表不存在: {glossary_arg}")
+        return None
+
+    # 智能检测：根据输入文本内容选择
+    if input_path:
+        detected = detect_domain(input_path)
+        if detected:
+            glossary_path = GLOSSARIES_DIR / detected
+            if glossary_path.exists():
+                return glossary_path
+        else:
+            print("未检测到匹配领域，不加载术语表")
+            return None
+
+    # 兜底：无输入文件时不自动加载
+    return None
+
+
 def setup_config(api_url=None, api_key=None, model_id=None, concurrency=20):
     """生成 LinguaGacha 配置文件"""
     template = TEMPLATES_DIR / "linguagacha_config.json"
@@ -53,9 +125,9 @@ def setup_config(api_url=None, api_key=None, model_id=None, concurrency=20):
                 "type": "CUSTOM_OPENAI",
                 "name": "Custom Model",
                 "api_format": "OpenAI",
-                "api_url": "https://yunwu.ai/v1",
+                "api_url": "https://your-api-provider.com/v1",
                 "api_key": "your-api-key",
-                "model_id": "gemini-2.5-flash",
+                "model_id": "gemini-3-flash-preview",
                 "request": {"extra_headers": {}, "extra_body": {},
                             "extra_headers_custom_enable": False,
                             "extra_body_custom_enable": False},
@@ -132,9 +204,12 @@ def create_project(input_path, project_name=None, glossary=None):
     ]
 
     if glossary:
-        cmd.extend(["--glossary", str(glossary)])
-    elif (GLOSSARIES_DIR / "south_asia_military.json").exists():
-        cmd.extend(["--glossary", str(GLOSSARIES_DIR / "south_asia_military.json")])
+        glossary_path = find_glossary(glossary)
+    else:
+        glossary_path = find_glossary(input_path=input_path)
+
+    if glossary_path:
+        cmd.extend(["--glossary", str(glossary_path)])
 
     if prompt_path.exists():
         cmd.extend(["--custom_prompt_zh", str(prompt_path)])
@@ -274,9 +349,9 @@ def main():
     action = sys.argv[1].lower()
 
     if action == 'setup':
-        api_url = input("API URL [https://yunwu.ai/v1]: ").strip() or "https://yunwu.ai/v1"
+        api_url = input("API URL (OpenAI兼容端点): ").strip()
         api_key = input("API Key: ").strip()
-        model_id = input("Model ID [gemini-2.5-flash]: ").strip() or "gemini-2.5-flash"
+        model_id = input("Model ID [gemini-3-flash-preview]: ").strip() or "gemini-3-flash-preview"
         concurrency = int(input("并发数 [20]: ").strip() or "20")
         setup_config(api_url, api_key, model_id, concurrency)
 

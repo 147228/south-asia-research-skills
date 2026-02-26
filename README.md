@@ -17,7 +17,7 @@
 
 - **Claude Code**（Anthropic 命令行工具）：子 agent 并行、Grep 检索、文件读写、脚本执行
 - **[LinguaGacha](https://github.com/neavo/LinguaGacha)**：开源翻译引擎，术语表注入、断点续翻、高并发
-- **翻译 API**：OpenAI 兼容接口（yunwu.ai 代理的 Gemini Flash）
+- **翻译 API**：OpenAI 兼容接口（Gemini Flash 等模型）
 
 ```
 原始文件 ──→ extract_text.py ──→ 纯文本
