@@ -1,6 +1,6 @@
 # 南亚专有名词库
 
-> 持续更新，翻译前请先查阅本库确认固定译法
+> 持续更新，翻译前请先查阅本库确认固定译法。此为南亚领域示例，可按需为其他领域创建类似术语库。
 
 ## 印度政治人物
 
@@ -13,12 +13,8 @@
 | Amit Shah | 阿米特·沙阿 | 内政部长 |
 | Nirmala Sitharaman | 尼尔玛拉·西塔拉曼 | 财政部长 |
 | Yogi Adityanath | 约吉·阿迪亚纳特 | 北方邦首席部长 |
-| Sushma Swaraj | 苏诗玛·斯瓦拉吉 | 前外交部长（已故） |
-| Arun Jaitley | 阿伦·贾特利 | 前财政部长（已故） |
-| P.K. Mishra | P·K·米什拉 | 总理首席秘书 |
 | Bipin Rawat | 比平·拉瓦特 | 前国防参谋长（已故） |
 | Rahul Gandhi | 拉胡尔·甘地 | 国大党领袖 |
-| Sonia Gandhi | 索尼娅·甘地 | 国大党主席 |
 
 ## 巴基斯坦政治人物
 
@@ -29,8 +25,6 @@
 | Nawaz Sharif | 纳瓦兹·谢里夫 | 前总理 |
 | Imran Khan | 伊姆兰·汗 | 前总理 |
 | Asim Munir | 阿西姆·穆尼尔 | 陆军参谋长 |
-| Qamar Javed Bajwa | 卡马尔·贾韦德·巴杰瓦 | 前陆军参谋长 |
-| Bilawal Bhutto Zardari | 比拉瓦尔·布托·扎尔达里 | 前外长 |
 
 ## 其他南亚国家领导人
 
@@ -38,10 +32,8 @@
 |------|----------|-----------|
 | Sheikh Hasina | 谢赫·哈西娜 | 孟加拉国前总理 |
 | Muhammad Yunus | 穆罕默德·尤努斯 | 孟加拉国临时政府首席顾问 |
-| Ranil Wickremesinghe | 拉尼尔·维克勒马辛哈 | 斯里兰卡前总统 |
 | Anura Kumara Dissanayake | 阿努拉·库马拉·迪萨纳亚克 | 斯里兰卡总统 |
 | K.P. Sharma Oli | K·P·夏尔马·奥利 | 尼泊尔总理 |
-| Pushpa Kamal Dahal (Prachanda) | 普拉昌达 | 尼泊尔前总理 |
 
 ## 历史人物
 
@@ -51,9 +43,6 @@
 | Jawaharlal Nehru | 贾瓦哈拉尔·尼赫鲁 | 印度首任总理 |
 | Indira Gandhi | 英迪拉·甘地 | 前总理 |
 | Muhammad Ali Jinnah | 穆罕默德·阿里·真纳 | 巴基斯坦国父 |
-| K.B. Hedgewar | K·B·海德格瓦 | RSS创始人 |
-| Chatrapati Shivaji | 湿瓦吉 | 马拉塔帝国创建者 |
-| Bhagat Singh | 巴格特·辛格 | 印度独立运动革命家 |
 
 ## 政党与组织
 
@@ -62,9 +51,7 @@
 | BJP (Bharatiya Janata Party) | 印度人民党 | 印人党 |
 | INC (Indian National Congress) | 印度国民大会党 | 国大党 |
 | RSS (Rashtriya Swayamsevak Sangh) | 国民志愿服务团 | - |
-| Sangh Parivar | 团家族 | - |
 | AAP (Aam Aadmi Party) | 平民党 | - |
-| TMC (Trinamool Congress) | 草根国大党 | - |
 | PPP (Pakistan Peoples Party) | 巴基斯坦人民党 | 人民党 |
 | PML-N (Pakistan Muslim League-Nawaz) | 巴基斯坦穆斯林联盟（谢里夫派） | 穆盟（谢派） |
 | PTI (Pakistan Tehreek-e-Insaf) | 巴基斯坦正义运动党 | 正义运动党 |
@@ -80,7 +67,6 @@
 | IB (Intelligence Bureau) | 情报局 | - |
 | RAW (Research and Analysis Wing) | 研究分析局 | 研分局 |
 | ISI (Inter-Services Intelligence) | 三军情报局 | - |
-| NIA (National Investigation Agency) | 国家调查局 | - |
 
 ## 国际组织
 
@@ -103,8 +89,6 @@
 | Jammu and Kashmir | 查谟和克什米尔 | 可简称"克什米尔" |
 | Ladakh | 拉达克 | 2019年成为联邦直辖区 |
 | Arunachal Pradesh | 阿鲁纳恰尔邦 | 我方称"藏南"，翻译时需注意立场 |
-| Uttar Pradesh | 北方邦 | - |
-| Gujarat | 古吉拉特邦 | 莫迪家乡 |
 
 ### 边境争议地区
 | 英文 | 中文 | 备注 |
@@ -121,18 +105,7 @@
 | Islamabad | 伊斯兰堡 | 首都 |
 | Rawalpindi | 拉瓦尔品第 | 军事总部所在地 |
 | Karachi | 卡拉奇 | - |
-| Lahore | 拉合尔 | - |
 | Balochistan | 俾路支省 | - |
-| Gilgit-Baltistan | 吉尔吉特-巴尔蒂斯坦 | - |
-
-### 其他
-| 英文 | 中文 | 备注 |
-|------|------|------|
-| Kathmandu | 加德满都 | 尼泊尔首都 |
-| Dhaka | 达卡 | 孟加拉国首都 |
-| Colombo | 科伦坡 | 斯里兰卡首都 |
-| Madhes | 马德西 | 尼泊尔南部地区 |
-| Dharamshala | 达兰萨拉 | 达赖流亡地 |
 
 ## 数字单位
 
@@ -146,11 +119,8 @@
 
 | 缩写 | 全称 | 中文 |
 |------|------|------|
-| CAD | Current Account Deficit | 经常项目赤字 |
 | FDI | Foreign Direct Investment | 外国直接投资 |
-| FII | Foreign Institutional Investment | 外国机构投资 |
 | GDP | Gross Domestic Product | 国内生产总值 |
-| NPA | Non-Performing Assets | 不良资产 |
 | GST | Goods and Services Tax | 商品和服务税 |
 | UPI | Unified Payments Interface | 统一支付接口 |
 | CPEC | China-Pakistan Economic Corridor | 中巴经济走廊 |
@@ -164,9 +134,6 @@
 | Brahmin | 婆罗门 | 种姓第一等级 |
 | Kshatriya | 刹帝利 | 种姓第二等级 |
 | Dalit | 达利特 | 贱民/不可接触者 |
-| OBC (Other Backward Classes) | 其他落后阶层 | - |
-| Scheduled Castes | 表列种姓 | - |
-| Scheduled Tribes | 表列部落 | - |
 
 ## 媒体与智库
 
@@ -175,7 +142,5 @@
 | The Hindu | 《印度教徒报》 | - |
 | Times of India | 《印度时报》 | - |
 | Hindustan Times | 《印度斯坦时报》 | - |
-| The Caravan | 《大篷车》杂志 | 深度调查媒体 |
 | Dawn | 《黎明报》 | 巴基斯坦 |
-| VIF (Vivekananda International Foundation) | 辨喜国际基金会 | 右翼智库 |
 | ORF (Observer Research Foundation) | 观察家研究基金会 | - |
