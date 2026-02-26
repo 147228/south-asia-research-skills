@@ -30,7 +30,7 @@ office_layout_*.py
 2026-*.txt
 
 # Sensitive config (contains API keys)
-/linguagacha_config.json
+linguagacha_config.json
 
 # Misc
 nul
